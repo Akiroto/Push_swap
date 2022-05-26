@@ -6,7 +6,7 @@
 /*   By: lseiller <lseiller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 16:10:03 by lseiller          #+#    #+#             */
-/*   Updated: 2022/04/09 01:18:42 by lseiller         ###   ########.fr       */
+/*   Updated: 2022/05/26 13:08:29 by lseiller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ t_list	*ft_parsing(int argc, char **argv, t_list **stack_a)
 	arg_number = ft_strdup(argv[i++]);
 	while (i < argc)
 	{
-		if (!arg_number[0] || !arg_number)
+		if (!*argv[i - 1] || !arg_number)
 		{
 			ft_putstr_fd("Error\n", 1);
 			free(arg_number);
@@ -66,6 +66,13 @@ t_list	*ft_parsing(int argc, char **argv, t_list **stack_a)
 		}
 		arg_number = ft_strjoin_free(arg_number, argv[i]);
 		i++;
+	}
+	if (!*argv[i - 1] || !arg_number)
+	{
+		ft_putstr_fd("Error\n", 1);
+		free(arg_number);
+		free(stack_a);
+		exit(2);
 	}
 	return (ft_create_stack(arg_number, stack_a));
 }
