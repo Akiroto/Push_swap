@@ -1,5 +1,7 @@
 # Push_swap with a tester (bash script) ^u^
-[![asciicast](https://asciinema.org/a/hv2NXASewzRdp2qOhcUfNSPeW.svg)](https://asciinema.org/a/hv2NXASewzRdp2qOhcUfNSPeW)
+
+[![lseiller's 42 push_swap Score](https://badge42.vercel.app/api/v2/cl17xe9q2001109mmi4yrqa58/project/2476263)](https://github.com/JaeSeoKim/badge42)
+
 To use the tester follow these step :
 1. Download tester.sh in this repo. (using `wget` or `curl`)
 2. You need the checker on the intra in the same directory (checker_linux or checker_Mac)
