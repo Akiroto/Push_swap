@@ -6,14 +6,14 @@
 #    By: lseiller <lseiller@42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/16 10:08:41 by lseiller          #+#    #+#              #
-#    Updated: 2022/12/16 10:15:30 by lseiller         ###   ########.fr        #
+#    Updated: 2022/12/16 12:50:47 by lseiller         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #!/bin/sh
 
 stack(){
-	ARG=`shuf -e \`seq -s " " 1 $1\` | sed ':a;N;$!ba;s/\n/ /g'`
+	ARG=`shuf -e \`seq -s " " 1 $1\` | tr '\n' ' '`
 	# ARG=`ruby -e "puts (1..$1).to_a.shuffle.join(' ')"`
 }
 push_swap(){
