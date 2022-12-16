@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    tester.sh                                          :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: lseiller <lseiller@42.fr>                  +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/12/16 10:08:41 by lseiller          #+#    #+#              #
+#    Updated: 2022/12/16 10:15:30 by lseiller         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 #!/bin/sh
 
 stack(){
@@ -53,7 +65,7 @@ valou_check(){
 		valou_grep=`echo $result | grep "All heap blocks were freed -- no leaks are possible"`
 		i=$((i+1))
 		if [ "$valou_grep" = "" ]; then
-			warn "\nMemory Leak !"
+			warn "\e[01;32;5;31mKO Memory Leak !"
 			output "Check error.log to see valgrind output"
 			echo "Valgrind :\n\n$result" > log/error.log
 			exit "2"
