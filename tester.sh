@@ -13,7 +13,8 @@
 #!/bin/sh
 
 stack(){
-	ARG=`ruby -e "puts (1..$1).to_a.shuffle.join(' ')"`
+	ARG=`shuf -e \`seq -s " " 1 $1\` | sed ':a;N;$!ba;s/\n/ /g'`
+	# ARG=`ruby -e "puts (1..$1).to_a.shuffle.join(' ')"`
 }
 push_swap(){
 	result=`./push_swap $ARG 2>&1`
